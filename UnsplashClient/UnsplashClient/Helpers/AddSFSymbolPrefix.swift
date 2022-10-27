@@ -13,7 +13,7 @@ func addSymbolPrefix(with symbol: String, for text: String) -> NSAttributedStrin
     imageAttachment.image = UIImage(systemName: "\(symbol)", withConfiguration: UIImage.SymbolConfiguration(scale: .large))?.withTintColor(.white)
     let fullString = NSMutableAttributedString(string: "")
     fullString.append(NSAttributedString(attachment: imageAttachment))
-    fullString.append(NSAttributedString(string: "\n\(text)"))
+    fullString.append(NSAttributedString(string: " \(text)"))
     return fullString
 }
 
