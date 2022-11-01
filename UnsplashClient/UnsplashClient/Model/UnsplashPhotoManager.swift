@@ -11,11 +11,6 @@ import UIKit
 protocol UnsplashDataDelegate {
     func updateUI(with photoModels: [PhotoModel])
 }
-//extension UnsplashDataDelegate {
-//    func updateUI(with photoModels: [PhotoModel], forID: Bool = false) {
-//        updateUI(with: photoModels, forID: forID)
-//    }
-//}
 
 struct UnsplashPhotoManager {
     
@@ -150,8 +145,6 @@ class CustomImageView: UIImageView {
     var imageUrlString: String?
     
     func loadImageFromURL(_ urlString: String) {
-        
-        
         imageUrlString = urlString
         guard let url = URL(string: urlString) else { return }
         
@@ -160,8 +153,6 @@ class CustomImageView: UIImageView {
         activityView.center = center
         addSubview(activityView)
         activityView.startAnimating()
-        
-        
         
         if let imageFromCache = imageCache.object(forKey: urlString as AnyObject) as? UIImage {
             image = imageFromCache
